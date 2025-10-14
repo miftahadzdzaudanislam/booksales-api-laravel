@@ -9,8 +9,7 @@ class BookController extends Controller
 {
     // Fungsi untuk menampilkan daftar buku 
     public function index() {
-        $data = new Book(); // Inisialisasi model Book
-        $books = $data->getBooks(); // mengambil data buku dari model
+        $books = Book::all(); // Mengambil semua data buku
 
         return view('books', ['books' => $books]);
     }

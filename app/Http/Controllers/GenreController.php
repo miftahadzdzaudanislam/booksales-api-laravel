@@ -9,8 +9,7 @@ class GenreController extends Controller
 {
     // fungsi untuk menampilkan daftar genre
     public function index() {
-        $data = new Genre(); // Inisialisasi model Genre
-        $genres = $data->getGenres(); // mengambil data genre dari model
+        $genres = Genre::all(); // Mengambil semua data genre
 
         return view('genres', ['genres' => $genres]);
     }
