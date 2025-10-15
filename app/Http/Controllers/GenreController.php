@@ -11,6 +11,10 @@ class GenreController extends Controller
     public function index() {
         $genres = Genre::all(); // Mengambil semua data genre
 
-        return view('genres', ['genres' => $genres]);
+        return response()->json([
+            'status' => true,
+            'message' => 'Get All Resources',
+            'genres' => $genres
+        ]);
     }
 }
