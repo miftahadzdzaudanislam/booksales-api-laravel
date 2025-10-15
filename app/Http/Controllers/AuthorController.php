@@ -15,6 +15,6 @@ class AuthorController extends Controller
             'status' => true,
             'message' => 'Get All Resources',
             'authors' => $authors
-        ]);
+        ], 200);
     }
 }

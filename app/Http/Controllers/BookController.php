@@ -15,6 +15,6 @@ class BookController extends Controller
             'status' => true,
             'message' => 'Get All Resources',
             'books' => $books
-        ]);
+        ], 200);
     }
 }

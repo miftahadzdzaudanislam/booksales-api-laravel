@@ -15,6 +15,6 @@ class GenreController extends Controller
             'status' => true,
             'message' => 'Get All Resources',
             'genres' => $genres
-        ]);
+        ], 200);
     }
 }
