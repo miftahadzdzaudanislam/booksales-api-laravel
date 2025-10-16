@@ -1,3 +1,17 @@
+# Framework Laravel | SIB NF Academy  
+
+Repository ini berisi kumpulan tugas dari course **Framework Laravel** pada program **SIB NF Academy**.  
+Setiap folder berisi implementasi konsep MVC, routing, controller, model, dan view sesuai studi kasus masing-masing.
+
+## 📂 Daftar Tugas  
+- **Tugas 1:** MVC sederhana untuk menampilkan data Genre dan Author.  
+
+---
+
+> 📌 Dibuat untuk memenuhi rangkaian tugas Framework Laravel SIB NF Academy.
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
