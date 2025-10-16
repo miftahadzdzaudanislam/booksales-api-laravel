@@ -4,7 +4,10 @@ Repository ini berisi kumpulan tugas dari course **Framework Laravel** pada prog
 Setiap folder berisi implementasi konsep MVC, routing, controller, model, dan view sesuai studi kasus masing-masing.
 
 ## 📂 Daftar Tugas  
-- **Tugas 1:** MVC sederhana untuk menampilkan data Genre dan Author.  
+
+### 🧩 Tugas 1  
+Membuat **MVC sederhana** untuk menampilkan data dari **Model Genre dan Author** ke **View** melalui **Controller**.  
+Masing-masing model berisi 5 data static di Model dan ditampilkan.
 
 ---
 
