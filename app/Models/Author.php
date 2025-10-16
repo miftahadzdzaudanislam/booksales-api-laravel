@@ -8,4 +8,7 @@ class Author extends Model
 {
     // Data author
     protected $table = 'authors';
+
+    // Kolom yang dapat diisi
+    protected $fillable = ['name', 'photo', 'bio'];
 }

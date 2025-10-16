@@ -8,4 +8,7 @@ class Genre extends Model
 {
     // Data genre
     protected $table = 'genres';
+
+    // Kolom yang dapat diisi
+    protected $fillable = ['name', 'description'];
 }
