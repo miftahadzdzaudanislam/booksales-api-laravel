@@ -21,6 +21,11 @@ Mengatur model, controller, routing, dan view agar data tampil di halaman web.
 ### 🧩 Tugas 4 — CRUD API (Genre & Author)  
 Membuat fitur **Read All** dan **Create Data** untuk tabel **Genre** dan **Author**, dengan pengujian menggunakan **Postman** untuk memastikan API berjalan sesuai kebutuhan.
 
+### 🧩 Tugas 5 — CRUD API (Show, Update, Delete)
+- Menambahkan fitur **Show**, **Update**, dan **Destroy** data untuk tabel **Genre** dan **Author**.  
+- Dilengkapi validasi jika data yang dicari tidak ditemukan
+- Serta mengubah routing menjadi **`apiResource`** agar lebih efisien dan RESTful.
+
 ---
 
 > 📌 Dibuat untuk memenuhi rangkaian tugas Framework Laravel SIB NF Academy.
