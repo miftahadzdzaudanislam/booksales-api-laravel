@@ -26,6 +26,11 @@ Membuat fitur **Read All** dan **Create Data** untuk tabel **Genre** dan **Autho
 - Dilengkapi validasi jika data yang dicari tidak ditemukan
 - Serta mengubah routing menjadi **`apiResource`** agar lebih efisien dan RESTful.
 
+### 🧩 Tugas 6 — Middleware dan Authentikasi dengan JWT Token
+Menerapkan **middleware** pada routing:  
+- **Read All** dan **Show** pada Author & Genre dapat diakses publik.  
+- **Create**, **Update**, dan **Destroy** hanya dapat diakses oleh role **admin**.
+
 ---
 
 > 📌 Dibuat untuk memenuhi rangkaian tugas Framework Laravel SIB NF Academy.
