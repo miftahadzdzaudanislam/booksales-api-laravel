@@ -28,8 +28,13 @@ Membuat fitur **Read All** dan **Create Data** untuk tabel **Genre** dan **Autho
 
 ### 🧩 Tugas 6 — Middleware dan Authentikasi dengan JWT Token
 Menerapkan **middleware** pada routing:  
-- **Read All** dan **Show** pada Author & Genre dapat diakses publik.  
+- **Read All** dan **Show** pada Author & Genre dapat diakses publik. 
 - **Create**, **Update**, dan **Destroy** hanya dapat diakses oleh role **admin**.
+
+### 🧩 Tugas 7 — CRUD Transaksi & Relasi Model    
+- Mengimplementasikan **relasi antar model** menggunakan `foreignId` di migration, serta menampilkan data relasi pada hasil query.  
+- **Create**, **Update**, dan **Show** hanya dapat diakses oleh **customer** yang sudah login.  
+- **Read All** dan **Destroy** hanya dapat diakses oleh **admin**.
 
 ---
 

@@ -11,7 +11,8 @@ class BookController extends Controller
 {
     // Fungsi untuk menampilkan daftar buku 
     public function index() {
-        $books = Book::all(); // Mengambil semua data buku
+        // Mengambil semua data buku beserta genre dan author
+        $books = Book::with('genre', 'author')->get();
 
         // Jika data buku kosong
         if ($books->isEmpty()) {
