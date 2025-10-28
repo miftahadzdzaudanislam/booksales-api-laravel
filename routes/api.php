@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,14 +30,21 @@ Route::apiResource('/authors', AuthorController::class)->only(['index', 'show'])
 // Auth Routes
 Route::middleware(['auth:api'])->group(function () {
     // Route transactions
-    Route::apiResource('/transactions', TransactionController::class)->only('store', 'update', 'show');
+    Route::apiResource('/transactions', TransactionController::class)->only('store', 'show');
+
+    Route::get('/my-transactions', [TransactionController::class, 'myTransactions']);
+    Route::delete('/my-transactions/{id}', [TransactionController::class, 'destroyMyTransaction']);
     
+    // Route Profile
+    Route::get('/profile', [UserController::class, 'showProfile']);
+
     // Routes for admin only
     Route::middleware(['role:admin'])->group(function () {
         Route::apiResource('/books', BookController::class)->only(['store', 'update', 'destroy']);
         Route::apiResource('/authors', AuthorController::class)->only(['store', 'update', 'destroy']);
         Route::apiResource('/genres', GenreController::class)->only(['store', 'update', 'destroy']);
-        Route::apiResource('/transactions', TransactionController::class)->only('index', 'destroy');
+        Route::apiResource('/transactions', TransactionController::class)->only('index', 'update', 'destroy');
+        Route::apiResource('/users', UserController::class)->only(['index', 'update', 'destroy']);
     });
     
 });

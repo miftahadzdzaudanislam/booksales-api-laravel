@@ -7,6 +7,8 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use function Pest\Laravel\get;
+
 class TransactionController extends Controller
 {
     // Fungsi untuk menampilkan semua transaksi
@@ -152,6 +154,70 @@ class TransactionController extends Controller
 
     // Fungsi untuk menghapus transaksi
     public function destroy(string $id) {
+        $transaction = Transaction::find($id);
+
+        if (!$transaction) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Resource data Transaction not found!'
+            ], 404);
+        }
+
+        // kembalikan stok
+        $book = Book::find($transaction->book_id);
+
+        $quantity = $transaction->total_amount / $book->price;
+        
+        $book->stock += $quantity;
+        $book->save();
+
+        $transaction->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Delete transaction successfully!'
+        ]);
+    }
+
+    // Fungsi untuk menampilkan transaksi berdasarkan user yang login
+    public function myTransactions() {
+        $user = auth('api')->user();
+
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Resource data Profile not found!'
+            ], 404);
+        }
+
+        $transaction = Transaction::with('book', 'user')
+            ->where('customer_id', $user->id)->get();
+
+        if (!$transaction) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Resource data Transactions not found!'
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Get Transaction user',
+            'data' => $transaction,
+        ], 200);
+    }
+
+    // Fungsi untuk menghapus transaksi berdasarkan user yang login
+    public function destroyMyTransaction(string $id) {
+        $user = auth('api')->user();
+
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Unauthorized!'
+            ], 401);
+        }
+        
         $transaction = Transaction::find($id);
 
         if (!$transaction) {
